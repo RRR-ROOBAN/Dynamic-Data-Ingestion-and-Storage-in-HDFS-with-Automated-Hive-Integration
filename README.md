@@ -1,7 +1,5 @@
 # Dynamic-Data-Ingestion-and-Storage-in-HDFS-with-Automated-Hive-Integration
 
-# Dynamic Data Ingestion and Storage in HDFS with Automated Hive Integration
-
 ## Overview
 This project implements both **manual** and **automated** data ingestion processes into **Hive**, utilizing **AWS EMR and EC2** for scalable data processing.
 
