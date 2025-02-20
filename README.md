@@ -129,23 +129,6 @@ echo "Process completed successfully!"
 1. Follow the steps in `manual_steps.txt`.
 2. Run each command manually in the terminal.
 
-### Automated Execution
-1. Clone this repository:
-   ```sh
-   git clone https://github.com/your-username/your-repo.git
-   ```
-2. Navigate to the project directory:
-   ```sh
-   cd your-repo
-   ```
-3. Grant execute permission to the script:
-   ```sh
-   chmod +x automate.sh
-   ```
-4. Run the script:
-   ```sh
-   ./automate.sh
-   ```
 
 ## Expected Output
 After execution, the script should display messages confirming:
@@ -161,9 +144,4 @@ After execution, the script should display messages confirming:
 - Modify HDFS paths and Hive table names if required.
 - The automated script can be scheduled using **cron jobs** for periodic execution.
 
-## License
-This project is open-source and available under the [MIT License](LICENSE).
-
----
-### Author: Your Name
 
