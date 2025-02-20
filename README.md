@@ -1,18 +1,24 @@
 # Dynamic-Data-Ingestion-and-Storage-in-HDFS-with-Automated-Hive-Integration
 
-# Automating and Manual Data Ingestion into Hive
+# Dynamic Data Ingestion and Storage in HDFS with Automated Hive Integration
 
 ## Overview
-This project covers both manual and automated processes for downloading, storing, and loading data into Hive.
+This project implements both **manual** and **automated** data ingestion processes into **Hive**, utilizing **AWS EMR and EC2** for scalable data processing.
 
-### Manual Process
+## Technologies Used
+- **AWS EMR**: For running Hadoop, HDFS, and Hive
+- **AWS EC2**: To host and manage the EMR cluster
+- **HDFS**: For distributed data storage
+- **Hive**: For structured data processing
+
+## Manual Process
 1. **Download Data**: Manually download the dataset from a given URL.
 2. **Move Data to HDFS**: Upload the file to HDFS using `hadoop fs -put`.
 3. **Create Hive Database and Table**: Manually create the Hive table.
 4. **Load Data into Hive**: Use the `LOAD DATA INPATH` command to load the file into Hive.
 5. **Verify Data**: Run a `SELECT COUNT(*)` query to check data integrity.
 
-### Automated Process
+## Automated Process
 1. **Download Data**: Fetches the dataset using `wget`.
 2. **Move Data to HDFS**: Transfers the file to HDFS automatically.
 3. **Create Hive Database and Table**: Ensures the database and table exist before loading data.
@@ -21,8 +27,8 @@ This project covers both manual and automated processes for downloading, storing
 
 ## Prerequisites
 Ensure the following are installed and configured:
-- Hadoop and HDFS
-- Hive
+- AWS EMR with Hadoop, Hive, and HDFS
+- AWS EC2 instance with access to EMR
 - Bash Shell
 - wget (for downloading data)
 
@@ -48,7 +54,7 @@ hive -f create_hive_table.hql
 
 # Step 4: Load Data into Hive
 hive -e "
-    LOAD DATA INPATH '/user/project_pe-03.csv' 
+    LOAD DATA INPATH '/user/project_pe-03.csv'
     INTO TABLE project.population_estimates;
 "
 
@@ -110,7 +116,7 @@ hive -f create_hive_table.hql
 # Step 4: Load data into Hive table
 echo "Loading data into Hive..."
 hive -e "
-    LOAD DATA INPATH '/user/project_pe-03.csv' 
+    LOAD DATA INPATH '/user/project_pe-03.csv'
     INTO TABLE project.population_estimates;
 "
 
@@ -129,6 +135,9 @@ echo "Process completed successfully!"
 1. Follow the steps in `manual_steps.txt`.
 2. Run each command manually in the terminal.
 
+### Automated Execution
+1. Ensure EMR and EC2 are running.
+2. Execute `bash automate.sh`.
 
 ## Expected Output
 After execution, the script should display messages confirming:
@@ -138,10 +147,6 @@ After execution, the script should display messages confirming:
 - Successful data loading into Hive
 - Row count from Hive table
 
-## Notes
-- Ensure Hive and HDFS are running before executing the script.
-- Update the dataset URL in the script before execution.
-- Modify HDFS paths and Hive table names if required.
-- The automated script can be scheduled using **cron jobs** for periodic execution.
+
 
 
